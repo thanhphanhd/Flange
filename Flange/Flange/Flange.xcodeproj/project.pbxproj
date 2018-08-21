@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E7B1AE4B0D840A3672201BD /* Pods_Flange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52BC77E58A877B153F75FE9A /* Pods_Flange.framework */; };
 		D3555BDB212C48AE004B9865 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3555BDA212C48AE004B9865 /* AppDelegate.swift */; };
 		D3555BDD212C48AE004B9865 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3555BDC212C48AE004B9865 /* ViewController.swift */; };
 		D3555BE0212C48AE004B9865 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3555BDE212C48AE004B9865 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F7ABDFECBCAC3BB7491AB6B /* Pods-Flange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flange.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flange/Pods-Flange.release.xcconfig"; sourceTree = "<group>"; };
+		52BC77E58A877B153F75FE9A /* Pods_Flange.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flange.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72C7FEC6174D1307D31C3AA6 /* Pods-Flange.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flange.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flange/Pods-Flange.debug.xcconfig"; sourceTree = "<group>"; };
 		D3555BD7212C48AE004B9865 /* Flange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3555BDA212C48AE004B9865 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3555BDC212C48AE004B9865 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E7B1AE4B0D840A3672201BD /* Pods_Flange.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D2F03AF41A063177E7D4318 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				52BC77E58A877B153F75FE9A /* Pods_Flange.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1F706740D6CE46112B223F25 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72C7FEC6174D1307D31C3AA6 /* Pods-Flange.debug.xcconfig */,
+				3F7ABDFECBCAC3BB7491AB6B /* Pods-Flange.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D3555BCE212C48AE004B9865 = {
 			isa = PBXGroup;
 			children = (
 				D3555BD9212C48AE004B9865 /* Flange */,
 				D3555BD8212C48AE004B9865 /* Products */,
+				1F706740D6CE46112B223F25 /* Pods */,
+				1D2F03AF41A063177E7D4318 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3555BE9212C48AF004B9865 /* Build configuration list for PBXNativeTarget "Flange" */;
 			buildPhases = (
+				770319FE95BA2B91D32B260F /* [CP] Check Pods Manifest.lock */,
 				D3555BD3212C48AE004B9865 /* Sources */,
 				D3555BD4212C48AE004B9865 /* Frameworks */,
 				D3555BD5212C48AE004B9865 /* Resources */,
+				8EF7E9443AC1D8FB83043F6A /* [CP] Embed Pods Frameworks */,
+				C17A15784296EDF12D34FBF9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		770319FE95BA2B91D32B260F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flange-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8EF7E9443AC1D8FB83043F6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Flange/Pods-Flange-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFImageHelper/AFImageHelper.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/IHKeyboardAvoiding/IHKeyboardAvoiding.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFImageHelper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IHKeyboardAvoiding.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flange/Pods-Flange-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C17A15784296EDF12D34FBF9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flange/Pods-Flange-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D3555BD3212C48AE004B9865 /* Sources */ = {
@@ -278,15 +369,13 @@
 		};
 		D3555BEA212C48AF004B9865 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72C7FEC6174D1307D31C3AA6 /* Pods-Flange.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EE2V9KDD6C;
 				INFOPLIST_FILE = Flange/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pqt.Flange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -296,15 +385,13 @@
 		};
 		D3555BEB212C48AF004B9865 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F7ABDFECBCAC3BB7491AB6B /* Pods-Flange.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EE2V9KDD6C;
 				INFOPLIST_FILE = Flange/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pqt.Flange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
