@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8DB91545FD6A150C3B888D42 /* Pods_Flange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8797F7F5D07FD6C2BF4E00 /* Pods_Flange.framework */; };
 		E504012E212BC19700542E6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E504012D212BC19700542E6A /* AppDelegate.swift */; };
 		E5040130212BC19700542E6A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E504012F212BC19700542E6A /* FirstViewController.swift */; };
 		E5040132212BC19700542E6A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5040131212BC19700542E6A /* SecondViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		438B02C765836A6C8FD40B12 /* Pods-Flange.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flange.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flange/Pods-Flange.debug.xcconfig"; sourceTree = "<group>"; };
+		839ADB28800B1BDF2C0217E4 /* Pods-Flange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flange.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flange/Pods-Flange.release.xcconfig"; sourceTree = "<group>"; };
+		AF8797F7F5D07FD6C2BF4E00 /* Pods_Flange.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flange.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E504012A212BC19700542E6A /* Flange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E504012D212BC19700542E6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E504012F212BC19700542E6A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DB91545FD6A150C3B888D42 /* Pods_Flange.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		190BCBD39558B1F1D1F0E46D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				438B02C765836A6C8FD40B12 /* Pods-Flange.debug.xcconfig */,
+				839ADB28800B1BDF2C0217E4 /* Pods-Flange.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4001020EF4FC1DA6238F0036 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF8797F7F5D07FD6C2BF4E00 /* Pods_Flange.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E5040121212BC19700542E6A = {
 			isa = PBXGroup;
 			children = (
 				E504012C212BC19700542E6A /* Flange */,
 				E504012B212BC19700542E6A /* Products */,
+				190BCBD39558B1F1D1F0E46D /* Pods */,
+				4001020EF4FC1DA6238F0036 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E504013E212BC19900542E6A /* Build configuration list for PBXNativeTarget "Flange" */;
 			buildPhases = (
+				367BBB28C0BA571BF9140D29 /* [CP] Check Pods Manifest.lock */,
 				E5040126212BC19700542E6A /* Sources */,
 				E5040127212BC19700542E6A /* Frameworks */,
 				E5040128212BC19700542E6A /* Resources */,
+				F1D5D67CD22084B32D8EC193 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		367BBB28C0BA571BF9140D29 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flange-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1D5D67CD22084B32D8EC193 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Flange/Pods-Flange-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flange/Pods-Flange-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E5040126212BC19700542E6A /* Sources */ = {
@@ -282,6 +349,7 @@
 		};
 		E504013F212BC19900542E6A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 438B02C765836A6C8FD40B12 /* Pods-Flange.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -301,6 +369,7 @@
 		};
 		E5040140212BC19900542E6A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 839ADB28800B1BDF2C0217E4 /* Pods-Flange.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
